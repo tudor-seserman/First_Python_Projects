@@ -14,7 +14,7 @@ I have thought up a number.
  You have 10 guesses to get it.
  ''')
 
-#Trying something different
+
 
 guess_counter=1
 def main(guess_counter):
