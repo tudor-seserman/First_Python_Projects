@@ -14,12 +14,28 @@ I have thought up a number.
  You have 10 guesses to get it.
  ''')
 
-#This is a test
+
 
 guess_counter=1
+
+def fermi(number, guess):
+    count=0
+    for x in range(3):
+         if number[x] == guess[x]:
+            count+=1
+    return count
+
+
+def pico(number, guess):
+    count=0
+    for x in guess:
+        if x in number:
+            count+=1
+    return count
+
 def main(guess_counter):
     number=str(random.randint(100,999))
-    #print(number)
+    print(number)
     for x in range(10):
         print(f'Guess #{guess_counter}:')
         guess_counter += 1
@@ -29,12 +45,11 @@ def main(guess_counter):
             continue
         if guess == number:
             return print('You got it!\nDo you want to play again? (yes or no)')
-        elif bool([x for x in range(len(number)) if number[x] == guess[x]]) == True:
-            print(' '.join(['Fermi' for x in range(len(number)) if number[x] == guess[x]]))
-            #print(Pdigit(guess, number))
+        elif fermi(number, guess) > 0:
+            print("Fermi" * fermi(number, guess))
             continue
-        elif bool([x for x in guess if x in number]) == True:
-            print(' '.join(['Pico' for x in guess if x in number]))
+        elif pico(number, guess) > 0:
+            print('Pico' * pico(number, guess))
             continue
         else:
             print('Bagels')
