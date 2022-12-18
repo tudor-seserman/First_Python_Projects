@@ -1,3 +1,8 @@
+'''
+This is my first attempt at this game.
+'''
+
+
 import random
 
 #print(

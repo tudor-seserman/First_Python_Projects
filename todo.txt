@@ -1,0 +1,15 @@
+ create user session
+ generate number and hash
+ add hashed randmon number to database
+ add user #guess in session to database
+ add user guess count to database
+ compare random number to guess
+    if number is wrong have user guess again
+    add new guess, new count to db and original random number
+    repeate until user uses up guess
+    else, if user is correct
+    send to a sucess page
+work in fermi and pico
+Display past guess
+Add styling with bootstrap
+ 

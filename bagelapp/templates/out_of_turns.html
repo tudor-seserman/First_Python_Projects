@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Sorry you did not guess the correct number and you are out of turns.</h1>
+
+<img src="https://pngimg.com/uploads/bagel/bagel_PNG6.png">
+
+<h3>Do you want to play again?</h3>
+<a href="{{ url_for('game_start')}}">Yes</a>
+<a href="{{ url_for('home')}}">No</a>
+
+{% endblock content %}

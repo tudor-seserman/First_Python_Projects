@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+
+<h1>Sorry wrong answer, guess again!</h1>
+
+<form method="POST" action="">
+    <fieldset>
+        <div id="guess_field">
+            {{ form.hidden_tag() }}
+          
+            {% if form.guess.errors %}
+                {{ form.guess }}
+                <div>
+                    {% for error in form.guess.errors %}
+                        <span>{{ error.upper() }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.guess }}
+            {% endif %}
+        </div>
+        <div id="submit_guess">
+            {{form.submit}}
+        </div>
+
+    </fieldset>
+</form>
+
+
+{% for past_guess in guess_counter %}
+    <p>{{ past_guess }}</p>
+{% endfor %}
+
+
+{% endblock content %}

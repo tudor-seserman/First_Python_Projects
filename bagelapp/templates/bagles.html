@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <h1 id="name">Bagles!</h1>
+    <pre id="instructions">
+        
+        Bagels, a deductive logic game.
+By Al Sweigart al@inventwithpython.com
+I am thinking of a 3-digit number. Try to guess what it is.
+Here are some clues:
+    </pre>
+    <div>
+        <table>
+        <tr>
+            <th>When I say:</th>
+            <th>That means:</th>
+        </tr>
+        <tr>
+            <th>Pico</th>
+            <th>One digit is correct but in the wrong position.</th>
+        </tr>
+        <tr>
+            <th>Fermi</th>
+            <th>One digit is correct and in the right position.</th>
+        </tr>
+        <tr>
+            <th>Bagels</th>
+            <th>No digit is correct.</th>
+        </tr>
+        </table>
+    </div>
+    <pre>
+    I have thought up a number.
+    You have 10 guesses to get it.
+        
+    </pre>
+
+    <a href="{{url_for('game_start')}}"><h2>Do you want to Play?</h2></a>
+
+
+
+
+</body>
+{% endblock content %}
