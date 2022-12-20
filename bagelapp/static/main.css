@@ -1,10 +1,123 @@
 *{
     align-content: center;
     text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body{
+    background-image: url("https://pngimg.com/uploads/bagel/bagel_PNG6.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: top;
+    color:rgb(101, 49, 4);
+    background-color: rgb(244, 202, 148);
+}
+
+a{
+    color: rgb(84, 39, 7);
+}
+
+#name{
+    margin-bottom: -25px;
+}
+
+#subheading{
+    margin-bottom: -15px; 
+}
+
+.title_card{
+    border: 1px solid rgba(158, 26, 26, 0.744);
+}
+
+#instructions{
+    margin-top: -15px;
+    font-size: larger;
 }
 
 table, th, td {
     margin:auto;
-    border: 1px solid black;
+    border: 1px solid rgb(221, 119, 10);
     border-collapse: collapse;
+    border-radius: 4px;
     }
+
+fieldset{
+    border:#555 1px;
+}
+
+.input_elements{
+    box-sizing: border-box;
+    display: block;
+}
+
+input[type=text]{
+    background-color: rgba(234, 219, 200, 0.359);
+    border: 10%;
+    margin: 5px;
+}
+
+input[type=submit] {
+    background-color: rgba(244, 202, 148, 0);
+    border: 2px solid rgb(210, 171, 119);
+    border-radius: 4px;
+    font-size: larger;
+  }
+
+input[type=text]:focus {
+    background-color: rgba(172, 104, 8, 0.644);
+    border: 2px solid #555;
+  }
+
+input[type=submit]:hover {
+    background-color: rgba(223, 174, 110, 0.742);
+    border: 2px solid #555;
+  }
+
+.error_msg{
+    background-color: rgba(157, 53, 16, 0.915);
+    color:rgba(120, 4, 4, 0.951);
+    border: .5px  #555;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    display: block;
+    margin: 5px;  
+}
+
+.bagelroll{
+    height: 300px;
+}
+
+.bagel_confetti{
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    z-index: 10;
+    height: 70vh;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-name: bagel_confetti;
+}
+
+@keyframes bagel_confetti {
+    0% {
+      transform: translateX(-50vh) rotate(0);
+    }
+  
+    100% {
+      transform: translateX(100vh) rotate(560deg);
+    }
+  }
+
+#sucess_screen{
+    padding-top: 10%;
+}
+
+.yes-no{
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: 700;
+    font-size: xx-large;
+}

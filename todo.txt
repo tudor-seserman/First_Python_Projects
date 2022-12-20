@@ -1,15 +1,10 @@
- create user session
- generate number and hash
- add hashed randmon number to database
- add user #guess in session to database
- add user guess count to database
- compare random number to guess
-    if number is wrong have user guess again
-    add new guess, new count to db and original random number
-    repeate until user uses up guess
-    else, if user is correct
-    send to a sucess page
-work in fermi and pico
-Display past guess
+Create user session
+Generate number hash for correct answer
+Integreate databse engine???
+Better formulate database integration - remove the need for create_all and drop_all
+Add a give up button
+Clean up route code - maybe refomulate as one function
+figure out a way to do all the logic on one page without the need to reload
 Add styling with bootstrap
- 
+Bagel Confetti #= correct number and randomized
+Deploy website

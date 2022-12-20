@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, url_for, redirect, flash
+from flask import Flask, render_template, url_for, redirect
 from bagelapp.form import Guess
 from bagelapp import app, db
 import random
@@ -8,7 +8,7 @@ from bagelapp.bagels_new import pico, fermi
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("bagles.html")
+    return render_template("bagels.html")
 
 @app.route("/game", methods=['GET', 'POST'])
 def game_start():
@@ -16,6 +16,7 @@ def game_start():
     if form.validate_on_submit():
         number=str(random.randint(100,999))
         your_number= str(form.guess.data)
+        db.drop_all()
         if number == your_number:
             return redirect(url_for('correct_guess'))
         elif fermi(number, your_number) > 0:
@@ -38,7 +39,7 @@ def game_start():
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('guess_again'))
-    return render_template("game_start.html", form=form)
+    return render_template("game_start.html", form=form, title="Start The Game!")
 
 @app.route("/guess_again", methods=['GET', 'POST'])
 def guess_again():
@@ -70,15 +71,15 @@ def guess_again():
                 db.session.add(user_guess)
                 db.session.commit()
                 return redirect(url_for('guess_again'))
-    return render_template("guess_again.html", guess_counter=guess_counter, form=form)
+    return render_template("guess_again.html", guess_counter=guess_counter, form=form, title="Guess Again")
 
 @app.route("/correct_guess")
 def correct_guess():
     db.drop_all()
-    return render_template("correct_guess.html")
+    return render_template("correct_guess.html", title='You Won!')
 
 @app.route("/out_of_turns")
 def out_of_turns():
     db.drop_all()
-    return render_template("out_of_turns.html")
+    return render_template("out_of_turns.html", title="Out Of Turns!" )
 

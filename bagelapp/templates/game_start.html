@@ -5,24 +5,25 @@
 
 <form method="POST" action="">
     <fieldset>
-        <div id="guess_field">
-            {{ form.hidden_tag() }}
-          
-            {% if form.guess.errors %}
-                {{ form.guess }}
-                <div>
-                    {% for error in form.guess.errors %}
-                        <span>{{ error.upper() }}</span>
-                    {% endfor %}
-                </div>
-                {% else %}
-                {{ form.guess }}
-            {% endif %}
-        </div>
-        <div id="submit_guess">
-            {{form.submit}}
-        </div>
-
+        <div class="input_elements">
+            <div class="guess_field">
+                {{ form.hidden_tag() }}
+            
+                {% if form.guess.errors %}
+                    {{ form.guess }}
+                    <div>
+                        {% for error in form.guess.errors %}
+                            <span class="error_msg">{{ error.upper() }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.guess }}
+                {% endif %}
+            </div>
+            <div class="submit_guess">
+                {{form.submit}}
+            </div>
+        <div>
     </fieldset>
 </form>
 

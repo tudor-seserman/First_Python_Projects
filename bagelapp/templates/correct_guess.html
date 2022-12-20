@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="bagel_confetti">
+        <img class="bagelroll" src="https://pngimg.com/uploads/bagel/bagel_PNG6.png">
+</div>
+<div id="sucess_screen">
+    <h1>You got the correct answer!</h1>
 
-<h1>You got the correct answer!</h1>
+    <h3>Do you want to play again?</h3>
 
-<h3>Do you want to play again?</h3>
-<a href="{{ url_for('game_start') }}">Yes</a>
-<a href="{{ url_for('home') }}">No</a>
-
+    <a class="yes-no" href="{{ url_for('game_start') }}">Play Again!</a>
+    <a class="yes-no" href="{{ url_for('home') }}">Home</a>
+</div>
 {% endblock content %}

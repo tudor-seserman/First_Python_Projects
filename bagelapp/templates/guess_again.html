@@ -8,24 +8,25 @@
 
 <form method="POST" action="">
     <fieldset>
-        <div id="guess_field">
-            {{ form.hidden_tag() }}
-          
-            {% if form.guess.errors %}
-                {{ form.guess }}
-                <div>
-                    {% for error in form.guess.errors %}
-                        <span>{{ error.upper() }}</span>
-                    {% endfor %}
-                </div>
-                {% else %}
-                {{ form.guess }}
-            {% endif %}
+        <div class="input_elements">
+            <div class="guess_field">
+                {{ form.hidden_tag() }}
+            
+                {% if form.guess.errors %}
+                    {{ form.guess }}
+                    <div>
+                        {% for error in form.guess.errors %}
+                            <span class="error_msg">{{ error.upper() }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.guess }}
+                {% endif %}
+            </div>
+            <div class="submit_guess">
+                {{form.submit}}
+            </div>
         </div>
-        <div id="submit_guess">
-            {{form.submit}}
-        </div>
-
     </fieldset>
 </form>
 
@@ -33,6 +34,27 @@
 {% for past_guess in guess_counter %}
     <p>{{ past_guess }}</p>
 {% endfor %}
+
+<div id="direction_table">
+    <table>
+    <tr>
+        <th>When I say:</th>
+        <th>That means:</th>
+    </tr>
+    <tr>
+        <th>Pico</th>
+        <th>One digit is correct but in the wrong position.</th>
+    </tr>
+    <tr>
+        <th>Fermi</th>
+        <th>One digit is correct and in the right position.</th>
+    </tr>
+    <tr>
+        <th>Bagels</th>
+        <th>No digit is correct.</th>
+    </tr>
+    </table>
+</div>
 
 
 {% endblock content %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+
+    <div class="title_card">
+        <h1 id="name">Bagels!</h1>
+        <h5 id="subheading">a deductive logic game.</h3>
+        <h3>By Al Sweigart al@inventwithpython.com</h3>
+    </div>
+
+    <div id="instructions">
+        <pre>
+    I am thinking of a 3-digit number. Try to guess what it is.
+    Here are some clues:
+        </pre>
+        <div id="direction_table">
+            <table>
+            <tr>
+                <th>When I say:</th>
+                <th>That means:</th>
+            </tr>
+            <tr>
+                <th>Pico</th>
+                <th>One digit is correct but in the wrong position.</th>
+            </tr>
+            <tr>
+                <th>Fermi</th>
+                <th>One digit is correct and in the right position.</th>
+            </tr>
+            <tr>
+                <th>Bagels</th>
+                <th>No digit is correct.</th>
+            </tr>
+            </table>
+        </div>
+        <pre>
+        I have thought up a number.
+        You have 10 guesses to get it.
+            
+        </pre>
+    </div>
+
+    <a href="{{url_for('game_start')}}"><h2>Do you want to Play?</h2></a>
+
+
+
+
+</body>
+{% endblock content %}
